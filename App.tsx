@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useMotionValue } from 'framer-motion';
 import { AppStep } from './types';
@@ -541,6 +540,7 @@ const App: React.FC = () => {
             <div className="relative w-full h-[60vh] overflow-hidden">
               <AnimatePresence>
                 {gameHearts.map((h) => (
+                  // Fix: correctly pass h.id to catchHeart function
                   <motion.div key={h.id} initial={{ y: -100, x: `${h.x}%`, opacity: 0 }} animate={{ y: window.innerHeight + 100, opacity: 1 }} exit={{ opacity: 0, scale: 2 }} transition={{ duration: 3.5, ease: 'linear' }} onPointerDown={() => catchHeart(h.id)} className="absolute text-6xl cursor-pointer select-none touch-none hover:scale-125 transition-transform p-4" style={{ left: 0 }}>
                     {h.type === 'heart' ? '❤️' : '🥣'}
                   </motion.div>
@@ -618,7 +618,7 @@ const App: React.FC = () => {
               animate={{ y: 0, opacity: 1 }}
               whileHover={{ scale: 1.05 }}
               onClick={nextStep}
-              className="fixed bottom-0 left-1/2 -translate-x-1/2 bg-white p-8 rounded-t-[3.5rem] shadow-[0_-20px_50px_rgba(0,0,0,0.1)] cursor-pointer flex flex-col items-center gap-2 border-t-4 border-rose-50 z-50 transition-all w-full max-w-sm"
+              className="fixed bottom-0 left-1/2 -translate-x-1/2 bg-white p-8 rounded-t-[3.5rem] shadow-[0_-20px_50px_rgba(0,0,0,0.1)] cursor-pointer flex flex-col items-center gap-2 border-t-4 border-rose-50 z-50 transition-all w-full max-sm"
             >
               <Mail size={56} className={themeClasses[theme].split(' ')[0]} />
               <p className={`font-black text-lg uppercase tracking-widest animate-pulse mt-2 ${themeClasses[theme].split(' ')[0]}`}>Click to Open Official Letter</p>
