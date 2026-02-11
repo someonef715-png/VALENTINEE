@@ -10,14 +10,14 @@ export const VANSH_INFO: ValentineInfo = {
 };
 
 export const ARGUMENT_COMMENTS = [
-  `Wait Vansh Tyagi, you're saying no? Even after all the ${VANSH_INFO.favFood} we could eat together?`,
+  `Wait Vansh Tyagi, you're saying no? After all the dreams we've talked about? 🌙`,
   `Is this what they teach you at ${VANSH_INFO.collegeName}? To break my heart? 💔`,
-  `Vandna aunty would be so disappointed in you right now, Vansh!`,
-  `But your birthday is on ${VANSH_INFO.birthday}, don't make me sad before your big day!`,
-  `Are you really going to say no to Khushi? Think about the Moong Dal Halwa!`,
+  `Vandna aunty would definitely tell you that you're making a huge mistake!`,
+  `Your birthday is on ${VANSH_INFO.birthday}, don't make me cry before the celebration!`,
+  `Are you really going to say no to Khushi? I thought we were a team...`,
   `You're being more difficult than a final exam at ${VANSH_INFO.collegeName}!`,
-  `I know you better than you know yourself. Click YES!`,
-  `I'm telling your mom Vandna you're being mean to me!`,
-  `Error: 'No' button functionality not found in Vansh's heart. Try 'Yes'!`,
-  `Just admit it, you love me more than your favorite ${VANSH_INFO.favFood}!`
+  `I know you better than you know yourself. Your heart is already saying yes.`,
+  `I'm telling your mom Vandna you're being mean to her favorite girl!`,
+  `Error: 'No' button functionality not found in Vansh's system. Try 'Yes'!`,
+  `Just admit it, you love me more than anything in this world! ❤️`
 ];
