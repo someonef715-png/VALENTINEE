@@ -254,11 +254,11 @@ const App: React.FC = () => {
   const handleFormChange = (key: string, val: string) => {
     setFormData({...formData, [key]: val});
     if (val.toLowerCase().includes('halwa') || val.toLowerCase().includes('moong')) {
-      setFormFeedback('Thinking about our sweet memories? ✨');
+      setFormFeedback('Thinking about our sweet moments? ✨');
     } else if (val.toLowerCase().includes('iamr')) {
       setFormFeedback('Good memory, IAMR boy! 🎓');
     } else if (val.length > 10) {
-      setFormFeedback('Wow, so much words! ✍️');
+      setFormFeedback('Wow, so many words! ✍️');
     } else {
       setFormFeedback('');
     }
@@ -634,7 +634,7 @@ const App: React.FC = () => {
             className="fixed inset-0 z-[200] bg-white flex items-center justify-center p-4 overflow-y-auto"
           >
             <div className={`max-w-2xl w-full rounded-[4rem] shadow-2xl p-8 relative border-8 transition-all duration-700 min-h-[95vh] flex flex-col overflow-hidden bg-white ${theme === 'rose' ? 'border-rose-100' : theme === 'lavender' ? 'border-purple-100' : 'border-sky-100'}`}>
-              <button onClick={restartApp} className="absolute top-8 right-8 p-3 bg-black/5 rounded-full z-[300] hover:bg-black/10 transition-colors">
+              <button onClick={restartApp} className="absolute top-8 right-8 p-3 bg-black/5 rounded-full z-[450] hover:bg-black/10 transition-colors">
                 <RotateCcw size={24} className="opacity-40" />
               </button>
 
@@ -663,11 +663,12 @@ const App: React.FC = () => {
                   </motion.div>
                 ) : (
                   <motion.div key="opened-letter" className="w-full flex flex-col items-center flex-grow py-8 overflow-hidden relative">
+                    {/* Stickers Layer */}
                     <div className="absolute inset-0 pointer-events-none z-[300]">
                        {[
-                           { emoji: '✨', label: 'Magic Connection', top: '10%', right: '10%', rotate: 12 },
-                           { emoji: '🎓', label: 'Where It Started', top: '30%', left: '10%', rotate: -6 },
-                           { emoji: '💫', label: 'Soulmate Energy', top: '50%', right: '15%', rotate: 8 }
+                           { emoji: '✨', label: 'Magic Connection', top: '5%', right: '5%', rotate: 12 },
+                           { emoji: '🎓', label: 'IAMR Pride', top: '25%', left: '5%', rotate: -6 },
+                           { emoji: '💫', label: 'Soulmate Energy', top: '45%', right: '10%', rotate: 8 }
                        ].map((sticker, idx) => (
                            <motion.div 
                                 key={idx}
@@ -684,20 +685,21 @@ const App: React.FC = () => {
                        ))}
                     </div>
 
-                    <div className="w-full max-w-lg space-y-8 font-handwritten text-3xl leading-relaxed text-center px-6 overflow-y-auto max-h-[70vh] custom-scrollbar relative z-[240] text-slate-800">
-                      <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className={`text-7xl font-black mb-8 ${themeClasses[theme].split(' ')[0]}`}>My Dearest Vansh,</motion.h1>
+                    {/* Scrollable Letter Body */}
+                    <div className="w-full max-w-lg space-y-8 font-handwritten text-4xl leading-relaxed text-center px-6 overflow-y-auto max-h-[70vh] custom-scrollbar relative z-[350] text-slate-900 pb-20">
+                      <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className={`text-7xl font-black mb-8 ${themeClasses[theme].split(' ')[0]}`}>My Vansh,</motion.h1>
                       
-                      <p className="text-slate-800">If you're reading this, it means you've put up with all my silliness today. I hope these little games made you smile, because that's truly what I love most—seeing that light in your eyes.</p>
+                      <p>If you're reading this, it means you've put up with all my silliness today. I hope these little games made you smile, because that's truly what I love most—seeing that light in your eyes.</p>
                       
-                      <p className="text-slate-800">Our journey since <strong>{VANSH_INFO.collegeName}</strong> hasn't just been about dates or hanging out. It's been about finding a home in another person. You've become my anchor, my best friend, and the person I want to share every quiet moment and every loud victory with.</p>
+                      <p>Our journey since we first met at <strong>{VANSH_INFO.collegeName}</strong> hasn't just been about dates or hanging out. It's been about finding a home in another person. You've become my anchor, my best friend, and the person I want to share every quiet moment and every loud victory with.</p>
                       
-                      <p className="text-slate-800">I know I tease you a lot (and I probably won't stop), but behind every joke is a heart that is completely and utterly yours. I value every small thing we share—the laughs that leave us breathless, the long talks that feel too short, and the way you always know how to make me feel safe.</p>
+                      <p>I know I tease you a lot (and I probably won't stop), but behind every joke is a heart that is completely and utterly yours. I value every small thing we share—the laughs that leave us breathless, the long talks that feel too short, and the way you always know how to make me feel safe.</p>
                       
-                      <p className="text-slate-800">So, Vansh Tyagi, the teasing stops for just this moment. The answer to everything we’ve ever been and everything we will be together is a heartfelt, emotional <strong>YES</strong>. I want to be your Valentine today, tomorrow, and every single day our future holds.</p>
+                      <p>So, Vansh Tyagi, the teasing stops for just this moment. The answer to everything we’ve ever been and everything we will be together is a heartfelt, emotional <strong>YES</strong>. I want to be your Valentine today, tomorrow, and every single day our future holds.</p>
 
-                      <div className="py-12">
-                        <ScratchArea secret="I love you more than words can say, Vansh! ❤️" />
-                        <p className="text-[12px] font-bold opacity-30 mt-4 tracking-widest uppercase">Scratch for a Little Promise</p>
+                      <div className="py-12 px-4">
+                        <ScratchArea secret="You're the love of my life, Vansh! ❤️" />
+                        <p className="text-[14px] font-bold opacity-40 mt-6 tracking-widest uppercase font-sans">Scratch for a little promise</p>
                       </div>
                       
                       <div className="py-12 flex flex-col items-center">
@@ -707,23 +709,25 @@ const App: React.FC = () => {
                             filter: ["drop-shadow(0 0 0px #f43f5e)", "drop-shadow(0 0 20px #f43f5e)", "drop-shadow(0 0 0px #f43f5e)"] 
                           }} 
                           transition={{ repeat: Infinity, duration: 2 }} 
-                          className={`text-9xl drop-shadow-xl ${themeClasses[theme].split('0')}`}
+                          className={`text-9xl drop-shadow-xl ${themeClasses[theme].split(' ')[0]}`}
                         >
                           ❤️
                         </motion.div>
-                        <p className="text-5xl mt-8 font-black tracking-tighter text-slate-900">Forever Yours, Khushi</p>
+                        <p className="text-6xl mt-10 font-black tracking-tighter text-slate-900">Forever Yours, Khushi</p>
                       </div>
 
-                      <div className="h-60" /> 
+                      {/* Spacer to allow scrolling past bottom buttons */}
+                      <div className="h-40" /> 
                     </div>
 
-                    <div className="mt-auto w-full pt-8 border-t border-black/5 flex flex-col items-center gap-4 relative z-[400] bg-white/80 backdrop-blur-sm pb-4">
+                    {/* Footer Layer (Always On Top) */}
+                    <div className="mt-auto w-full pt-8 border-t border-black/5 flex flex-col items-center gap-4 relative z-[400] bg-white/95 backdrop-blur-sm pb-6">
                       <div className="flex gap-4">
                         <motion.button whileHover={{ scale: 1.1 }} className="bg-white p-4 rounded-2xl shadow-lg border border-rose-50 text-rose-500"><Download size={24} /></motion.button>
                         <motion.button whileHover={{ scale: 1.1 }} className="bg-white p-4 rounded-2xl shadow-lg border border-rose-50 text-rose-500"><Share2 size={24} /></motion.button>
                       </div>
                       <div className="text-center">
-                        <p className="opacity-30 font-bold uppercase tracking-widest text-[10px] mb-4 italic">Hold for a Secret Whisper</p>
+                        <p className="opacity-40 font-bold uppercase tracking-widest text-[11px] mb-4 italic font-sans">Hold for a Secret Whisper</p>
                         <motion.button 
                             onMouseDown={() => { setShowSecret(true); playSound(successSound); }} 
                             onMouseUp={() => setShowSecret(false)} 
@@ -741,8 +745,8 @@ const App: React.FC = () => {
                         {showSecret && (
                           <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/98 backdrop-blur-xl p-12 rounded-[4rem] border-8 border-rose-500 text-rose-600 font-bold text-center z-[500] shadow-2xl w-[90%] max-w-md">
                             <Sparkles className="mx-auto mb-6 text-yellow-400" size={80} />
-                            <p className="text-5xl font-handwritten leading-relaxed">"You are my whole world, Vansh. I love you endlessly."</p>
-                            <div className="mt-10 text-xl uppercase tracking-widest opacity-40 font-black">- With all my heart, Khushi -</div>
+                            <p className="text-5xl font-handwritten leading-relaxed text-slate-900">"You are my whole world, Vansh. I love you endlessly."</p>
+                            <div className="mt-10 text-xl uppercase tracking-widest opacity-40 font-black font-sans">- With all my heart, Khushi -</div>
                           </motion.div>
                         )}
                       </AnimatePresence>
