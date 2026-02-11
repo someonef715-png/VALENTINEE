@@ -1,8 +1,7 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useMotionValue } from 'framer-motion';
-import { AppStep } from './types';
-import { VANSH_INFO, ARGUMENT_COMMENTS } from './constants';
+import { AppStep } from './types.ts';
+import { VANSH_INFO, ARGUMENT_COMMENTS } from './constants.ts';
 import { Heart, ChevronRight, Sparkles, Trophy, Mail, X, Stars, Send, Volume2, VolumeX, Ghost, Palette, RotateCcw, Download, Share2 } from 'lucide-react';
 
 // Custom Cursor Follower
@@ -80,8 +79,8 @@ const ScratchArea: React.FC<{ secret: string }> = ({ secret }) => {
       canvas.removeEventListener('touchstart', startDrawing);
       window.removeEventListener('mouseup', stopDrawing);
       window.removeEventListener('touchend', stopDrawing);
-      canvas.removeEventListener('mousemove', scratch);
-      canvas.removeEventListener('touchmove', scratch);
+      canvas.addEventListener('mousemove', scratch);
+      canvas.addEventListener('touchmove', scratch);
     };
   }, []);
 
